@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carcharias Boxing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+  <!-- Header -->
+  <header class="bg-gray-900 fixed top-0 w-full z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="text-2xl font-bold text-cyan-400">Carcharias Boxing</div>
+      <nav class="space-x-4">
+        <a href="#accueil" class="hover:text-cyan-400">Accueil</a>
+        <a href="#club" class="hover:text-cyan-400">Le Club</a>
+        <a href="#horaires" class="hover:text-cyan-400">Horaires</a>
+        <a href="#inscriptions" class="hover:text-cyan-400">Inscriptions</a>
+        <a href="#blog" class="hover:text-cyan-400">Blog</a>
+        <a href="#contact" class="hover:text-cyan-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="accueil" class="pt-24 bg-cover bg-center" style="background-image: url('https://via.placeholder.com/1920x600');">
+    <div class="text-center py-20">
+      <h1 class="text-5xl text-cyan-400 font-extrabold drop-shadow-lg">Bienvenue chez Carcharias Boxing</h1>
+    </div>
+  </section>
+
+  <!-- Club Section -->
+  <section id="club" class="bg-gray-900 text-white py-16 px-6">
+    <h2 class="text-center text-cyan-400 text-4xl font-bold mb-8 uppercase">Le Club</h2>
+
+    <!-- Histoire -->
+    <div id="histoire" class="max-w-5xl mx-auto mb-16">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <img src="https://via.placeholder.com/600x400" alt="Histoire du club" class="rounded-lg shadow-md">
+        <div>
+          <h3 class="text-2xl text-cyan-300 font-bold mb-4">Notre Histoire</h3>
+          <p class="text-gray-300">Fondé en 1996 à Perpignan, Carcharias Boxing est un pilier de la scène sportive régionale. Depuis plus de deux décennies, le club a formé des centaines de boxeurs et continue de rayonner à travers la France.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Valeurs -->
+    <div id="valeurs" class="max-w-5xl mx-auto mb-16">
+      <h3 class="text-2xl text-cyan-300 font-bold mb-4">Nos Valeurs & Spécialités</h3>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li><strong>Respect :</strong> un cadre éducatif et éthique exigeant.</li>
+        <li><strong>Dépassement de soi :</strong> valorisation de l'effort individuel et collectif.</li>
+        <li><strong>Accessibilité :</strong> cours de 5 à 77 ans, pour tous niveaux.</li>
+        <li><strong>Disciplines :</strong> boxe anglaise, kickboxing, muay-thaï, full-contact.</li>
+      </ul>
+    </div>
+
+    <!-- Réussites -->
+    <div id="reussites" class="max-w-5xl mx-auto mb-16">
+      <h3 class="text-2xl text-cyan-300 font-bold mb-4">Nos Réussites</h3>
+      <p class="text-gray-300">Le club s'est distingué à travers de nombreux titres régionaux et nationaux. Notre gala annuel "Carcharias Fight Night" est devenu un rendez-vous incontournable.</p>
+    </div>
+
+    <!-- Objectifs -->
+    <div id="projets" class="max-w-5xl mx-auto mb-16">
+      <h3 class="text-2xl text-cyan-300 font-bold mb-4">Nos Objectifs</h3>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>Développer l'excellence sportive et détecter les talents.</li>
+        <li>Renforcer les partenariats avec les écoles et centres sociaux.</li>
+        <li>Créer un pôle sport-études local pour les jeunes boxeurs.</li>
+      </ul>
+    </div>
+
+    <!-- Encadrement -->
+    <div id="encadrement" class="max-w-5xl mx-auto mb-16">
+      <h3 class="text-2xl text-cyan-300 font-bold mb-4">Encadrement & Entraîneurs</h3>
+      <div class="grid md:grid-cols-2 gap-6 text-gray-300">
+        <div>
+          <h4 class="text-cyan-200 font-semibold">Entraîneur principal</h4>
+          <p>Christophe Errera</p>
+          <h4 class="text-cyan-200 font-semibold mt-4">Entraîneur spécifique</h4>
+          <p>Philippe Cabane</p>
+          <h4 class="text-cyan-200 font-semibold mt-4">Coach mental & éducateur</h4>
+          <p>Abdelrahmane Oulbani</p>
+        </div>
+        <div>
+          <h4 class="text-cyan-200 font-semibold">Entraîneurs individuels</h4>
+          <p>Magmadi Rachid, Vuillamy Tino</p>
+          <h4 class="text-cyan-200 font-semibold mt-4">Section éducative</h4>
+          <p>Thayra Lopez</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Organigramme -->
+    <div id="organigramme" class="max-w-5xl mx-auto">
+      <h3 class="text-2xl text-cyan-300 font-bold mb-4">Organigramme de l'association</h3>
+      <table class="w-full text-left text-gray-300 border border-gray-700">
+        <thead class="bg-gray-800 text-cyan-400">
+          <tr>
+            <th class="p-2 border border-gray-700">Fonction</th>
+            <th class="p-2 border border-gray-700">Nom</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-2 border border-gray-700">Président d'honneur</td><td class="p-2 border border-gray-700">Laurent Sobraques</td></tr>
+          <tr><td class="p-2 border border-gray-700">Président</td><td class="p-2 border border-gray-700">Stéphane Buttigieg</td></tr>
+          <tr><td class="p-2 border border-gray-700">Trésorier</td><td class="p-2 border border-gray-700">Christophe Errera</td></tr>
+          <tr><td class="p-2 border border-gray-700">Secrétaire</td><td class="p-2 border border-gray-700">Abdelrahmane Oulbani</td></tr>
+          <tr><td class="p-2 border border-gray-700">Vice-Président</td><td class="p-2 border border-gray-700">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Horaires Section -->
+  <section id="horaires" class="bg-black text-white py-16 px-6">
+    <h2 class="text-center text-cyan-400 text-4xl font-bold mb-8 uppercase">Horaires</h2>
+    <div class="max-w-3xl mx-auto">
+      <table class="w-full text-left text-gray-300 border border-gray-700">
+        <thead class="bg-gray-800 text-cyan-400">
+          <tr>
+            <th class="p-2 border border-gray-700">Jour</th>
+            <th class="p-2 border border-gray-700">Enfants</th>
+            <th class="p-2 border border-gray-700">Adultes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-2 border border-gray-700">Lundi</td><td class="p-2 border border-gray-700">17h - 18h</td><td class="p-2 border border-gray-700">18h30 - 20h</td></tr>
+          <tr><td class="p-2 border border-gray-700">Mercredi</td><td class="p-2 border border-gray-700">17h - 18h</td><td class="p-2 border border-gray-700">18h30 - 20h</td></tr>
+          <tr><td class="p-2 border border-gray-700">Vendredi</td><td class="p-2 border border-gray-700">17h - 18h</td><td class="p-2 border border-gray-700">18h30 - 20h</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Inscriptions Section -->
+  <section id="inscriptions" class="bg-gray-900 text-white py-16 px-6">
+    <h2 class="text-center text-cyan-400 text-4xl font-bold mb-8 uppercase">Inscriptions</h2>
+    <div class="max-w-3xl mx-auto text-gray-300 space-y-4">
+      <p>Les inscriptions se font sur place pendant les heures d'entraînement. Prévoir un certificat médical ainsi qu'une photo d'identité.</p>
+      <p>Tarif annuel : <span class="font-semibold text-cyan-300">250€</span> (réduction pour les familles et les étudiants).</p>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="bg-black text-white py-16 px-6">
+    <h2 class="text-center text-cyan-400 text-4xl font-bold mb-8 uppercase">Blog</h2>
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+      <article class="bg-gray-800 p-4 rounded shadow-md">
+        <h3 class="text-cyan-300 text-xl font-semibold mb-2">Nouvelles de la saison</h3>
+        <p class="text-gray-300">Suivez ici les résultats de nos compétiteurs et les prochains événements du club.</p>
+      </article>
+      <article class="bg-gray-800 p-4 rounded shadow-md">
+        <h3 class="text-cyan-300 text-xl font-semibold mb-2">Stages d'été</h3>
+        <p class="text-gray-300">Les stages d'été débuteront en juillet. Ouverts à tous les niveaux, ils permettent une progression rapide.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-900 text-white py-16 px-6">
+    <h2 class="text-center text-cyan-400 text-4xl font-bold mb-8 uppercase">Contact</h2>
+    <div class="max-w-3xl mx-auto text-gray-300 space-y-4">
+      <p>Email : <a href="mailto:contact@carchariasboxing.fr" class="text-cyan-300 hover:underline">contact@carchariasboxing.fr</a></p>
+      <p>Téléphone : 06 00 00 00 00</p>
+      <p>Adresse : 123 rue de la Boxe, 66000 Perpignan</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center text-gray-400 py-4">
+    <p>&copy; 2025 Carcharias Boxing - Tous droits réservés</p>
+  </footer>
+</body>
+</html>
