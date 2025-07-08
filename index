@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -17,3 +17,87 @@
     <div>
       <span class="mr-4">☎ 06 00 00 00 00</span>
       <span>✉ <a href="mailto:contact@carcharias-boxing.fr" class="text-blue-400 hover:underline">contact@carcharias-boxing.fr</a></span>
+    </div>
+    <div class="space-x-3">
+      <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="hover:text-blue-400"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <!-- nav -->
+  <header class="sticky top-0 z-40 bg-black shadow">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <div class="flex items-center space-x-3">
+        <img src="/images/logocarcharias.png" alt="Logo" class="w-8 h-8">
+        <span class="font-bold text-xl">Carcharias Boxing</span>
+      </div>
+      <nav class="hidden md:flex space-x-6 uppercase text-sm font-semibold">
+        <a href="index.html" class="hover:text-blue-400">Accueil</a>
+        <a href="le-club.html" class="hover:text-blue-400">Club</a>
+        <a href="planning.html" class="hover:text-blue-400">Planning</a>
+        <a href="actualites.html" class="hover:text-blue-400">Actus</a>
+        <a href="boutique.html" class="hover:text-blue-400">Boutique</a>
+        <a href="inscription.html" class="hover:text-blue-400">Inscription</a>
+        <a href="contact.html" class="hover:text-blue-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- hero slider using alpinejs -->
+  <section x-data="{active:0,images:['https://via.placeholder.com/1920x1080?text=Slide+1','https://via.placeholder.com/1920x1080?text=Slide+2','https://via.placeholder.com/1920x1080?text=Slide+3']}" x-init="setInterval(()=>{active=(active+1)%images.length},5000)" class="relative h-screen overflow-hidden">
+    <template x-for="(img,i) in images" :key="i">
+      <div x-show="active===i" x-transition class="absolute inset-0 bg-cover bg-center" :style="'background-image:url('+img+')'"></div>
+    </template>
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-blue-400">Bienvenue chez Carcharias Boxing</h1>
+    </div>
+    <div class="absolute bottom-4 right-4 space-x-2">
+      <template x-for="(img,i) in images" :key="'btn'+i">
+        <button @click="active=i" :class="{'bg-blue-400':active===i,'bg-gray-500':active!==i}" class="w-3 h-3 rounded-full"></button>
+      </template>
+    </div>
+  </section>
+
+  <!-- cards -->
+  <section class="py-12 px-4" id="resume">
+    <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
+        <h3 class="text-xl font-bold mb-3">Le Club</h3>
+        <p class="mb-4">Depuis 1996, Carcharias Boxing forme des élites nationales et internationales.</p>
+        <a href="le-club.html" class="text-blue-400 hover:underline">Découvrir le club →</a>
+      </div>
+      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
+        <h3 class="text-xl font-bold mb-3">Planning</h3>
+        <p class="mb-4">Consultez rapidement les horaires de nos cours.</p>
+        <a href="planning.html" class="text-blue-400 hover:underline">Voir les horaires →</a>
+      </div>
+      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
+        <h3 class="text-xl font-bold mb-3">Actualités</h3>
+        <p class="mb-4">Les dernières nouvelles du club.</p>
+        <a href="actualites.html" class="text-blue-400 hover:underline">Lire plus d'actus →</a>
+      </div>
+      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
+        <h3 class="text-xl font-bold mb-3">Boutique</h3>
+        <p class="mb-4">Découvrez nos produits officiels.</p>
+        <a href="boutique.html" class="text-blue-400 hover:underline">Accéder à la boutique →</a>
+      </div>
+      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
+        <h3 class="text-xl font-bold mb-3">Inscription</h3>
+        <p class="mb-4">Rejoignez-nous dès maintenant.</p>
+        <a href="inscription.html" class="text-blue-400 hover:underline">S'inscrire →</a>
+      </div>
+      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
+        <h3 class="text-xl font-bold mb-3">Contact</h3>
+        <p class="mb-4">1 rue Étienne Terrus, 66000 Perpignan</p>
+        <a href="contact.html" class="text-blue-400 hover:underline">Nous contacter →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-center py-4 text-gray-400">
+    © 2025 Carcharias Boxing - <a href="mentions.html" class="hover:underline">Mentions légales</a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
+</body>
+</html>
