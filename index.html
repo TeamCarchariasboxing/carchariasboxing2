@@ -44,7 +44,7 @@
   </header>
 
   <!-- hero slider using alpinejs -->
-  <section x-data="{active:0,images:['https://via.placeholder.com/1920x1080?text=Slide+1','https://via.placeholder.com/1920x1080?text=Slide+2','https://via.placeholder.com/1920x1080?text=Slide+3']}" x-init="setInterval(()=>{active=(active+1)%images.length},5000)" class="relative h-screen overflow-hidden">
+  <section id="hero" x-data="{active:0,images:['https://via.placeholder.com/1920x1080?text=Slide+1','https://via.placeholder.com/1920x1080?text=Slide+2','https://via.placeholder.com/1920x1080?text=Slide+3']}" x-init="setInterval(()=>{active=(active+1)%images.length},5000)" class="relative h-screen overflow-hidden">
     <template x-for="(img,i) in images" :key="i">
       <div x-show="active===i" x-transition class="absolute inset-0 bg-cover bg-center" :style="'background-image:url('+img+')'"></div>
     </template>
@@ -58,39 +58,117 @@
     </div>
   </section>
 
-  <!-- cards -->
-  <section class="py-12 px-4" id="resume">
-    <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
-        <h3 class="text-xl font-bold mb-3">Le Club</h3>
-        <p class="mb-4">Depuis 1996, Carcharias Boxing forme des élites nationales et internationales.</p>
-        <a href="le-club.html" class="text-blue-400 hover:underline">Découvrir le club →</a>
+  <!-- Le Club -->
+  <section id="club" class="py-12 px-4 bg-blue-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Le Club</h2>
+      <p class="mb-4">Fondé en 1996 à Perpignan, Carcharias Boxing est devenu une référence régionale en formant de nombreux champions nationaux et internationaux.</p>
+      <p class="mb-6">Nos valeurs : performance, inclusion et esprit de famille.</p>
+      <a href="le-club.html" class="text-white underline">Découvrir le club →</a>
+    </div>
+  </section>
+
+  <!-- Planning -->
+  <section id="planning" class="py-12 px-4 bg-red-900">
+    <h2 class="text-3xl font-bold text-center mb-8">Planning des cours</h2>
+    <div class="overflow-x-auto max-w-4xl mx-auto">
+      <table class="w-full table-fixed text-center text-white border-collapse">
+        <thead>
+          <tr class="bg-gray-800">
+            <th class="p-2 border">Horaires</th>
+            <th class="p-2 border">Lundi</th>
+            <th class="p-2 border">Mardi</th>
+            <th class="p-2 border">Mercredi</th>
+            <th class="p-2 border">Jeudi</th>
+            <th class="p-2 border">Vendredi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border p-2">17h</td>
+            <td class="border p-2 bg-yellow-600">Enfants</td>
+            <td class="border p-2"></td>
+            <td class="border p-2 bg-yellow-600">Enfants</td>
+            <td class="border p-2"></td>
+            <td class="border p-2 bg-yellow-600">Enfants</td>
+          </tr>
+          <tr class="bg-gray-700">
+            <td class="border p-2">18h30</td>
+            <td class="border p-2 bg-green-600">Adultes</td>
+            <td class="border p-2 bg-blue-600">Ados</td>
+            <td class="border p-2 bg-green-600">Adultes</td>
+            <td class="border p-2 bg-blue-600">Ados</td>
+            <td class="border p-2 bg-red-600">Compétiteurs</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Actualités -->
+  <section id="actus" class="py-12 px-4 bg-white text-black">
+    <h2 class="text-3xl font-bold text-center mb-8">Actualités</h2>
+    <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+      <article class="bg-gray-200 p-4 rounded shadow">
+        <p class="text-sm text-gray-500">01/01/2025</p>
+        <h3 class="text-xl font-semibold mb-2">Nouveau champion régional</h3>
+        <p>Notre boxeur Rémi Parra remporte le titre régional…</p>
+        <a href="#" class="text-blue-700 hover:underline">Lire plus</a>
+      </article>
+      <article class="bg-gray-200 p-4 rounded shadow">
+        <p class="text-sm text-gray-500">15/12/2024</p>
+        <h3 class="text-xl font-semibold mb-2">Stage d'hiver</h3>
+        <p>Les inscriptions pour le stage d'hiver sont ouvertes…</p>
+        <a href="#" class="text-blue-700 hover:underline">Lire plus</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Boutique -->
+  <section id="boutique" class="py-12 px-4 bg-black">
+    <h2 class="text-3xl font-bold text-center mb-8">Boutique</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div class="bg-gray-800 p-4 rounded shadow flex flex-col">
+        <img src="https://via.placeholder.com/200" alt="product" class="mb-2 rounded">
+        <h3 class="font-semibold">Gants 10oz</h3>
+        <p class="mb-2">45 €</p>
       </div>
-      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
-        <h3 class="text-xl font-bold mb-3">Planning</h3>
-        <p class="mb-4">Consultez rapidement les horaires de nos cours.</p>
-        <a href="planning.html" class="text-blue-400 hover:underline">Voir les horaires →</a>
+      <div class="bg-gray-800 p-4 rounded shadow flex flex-col">
+        <img src="https://via.placeholder.com/200" alt="product" class="mb-2 rounded">
+        <h3 class="font-semibold">T-shirt club</h3>
+        <p class="mb-2">20 €</p>
       </div>
-      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
-        <h3 class="text-xl font-bold mb-3">Actualités</h3>
-        <p class="mb-4">Les dernières nouvelles du club.</p>
-        <a href="actualites.html" class="text-blue-400 hover:underline">Lire plus d'actus →</a>
+    </div>
+    <div class="text-center mt-6">
+      <a href="boutique.html" class="text-blue-400 underline">Voir la boutique complète →</a>
+    </div>
+  </section>
+
+  <!-- Inscription -->
+  <section id="inscription" class="py-12 px-4 bg-blue-700">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Inscription</h2>
+      <p class="mb-6">Rejoignez-nous dès maintenant et profitez d'un premier cours d'essai !</p>
+      <a href="inscription.html" class="text-white underline">S'inscrire en ligne →</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-12 px-4 bg-red-700">
+    <h2 class="text-3xl font-bold text-center mb-8">Nous contacter</h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
+      <div class="space-y-4">
+        <p>Adresse : 1 rue Étienne Terrus, 66000 Perpignan</p>
+        <p>Téléphone : 06 00 00 00 00</p>
+        <p>Email : <a href="mailto:contact@carcharias-boxing.fr" class="underline">contact@carcharias-boxing.fr</a></p>
+        <iframe class="w-full h-64" src="https://www.google.com/maps?q=1+rue+%C3%89tienne+Terrus+Perpignan&output=embed"></iframe>
       </div>
-      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
-        <h3 class="text-xl font-bold mb-3">Boutique</h3>
-        <p class="mb-4">Découvrez nos produits officiels.</p>
-        <a href="boutique.html" class="text-blue-400 hover:underline">Accéder à la boutique →</a>
-      </div>
-      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
-        <h3 class="text-xl font-bold mb-3">Inscription</h3>
-        <p class="mb-4">Rejoignez-nous dès maintenant.</p>
-        <a href="inscription.html" class="text-blue-400 hover:underline">S'inscrire →</a>
-      </div>
-      <div class="bg-gray-800 p-6 rounded shadow hover:shadow-lg transition" >
-        <h3 class="text-xl font-bold mb-3">Contact</h3>
-        <p class="mb-4">1 rue Étienne Terrus, 66000 Perpignan</p>
-        <a href="contact.html" class="text-blue-400 hover:underline">Nous contacter →</a>
-      </div>
+      <form class="space-y-4">
+        <input type="text" placeholder="Nom" class="p-2 rounded bg-gray-800 w-full" required>
+        <input type="email" placeholder="Email" class="p-2 rounded bg-gray-800 w-full" required>
+        <textarea placeholder="Message" class="p-2 rounded bg-gray-800 w-full" rows="5" required></textarea>
+        <button type="submit" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Envoyer</button>
+      </form>
     </div>
   </section>
 
