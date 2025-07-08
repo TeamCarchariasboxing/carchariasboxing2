@@ -1,0 +1,19 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carcharias Boxing - Accueil</title>
+  <link rel="icon" type="image/png" href="/images/logocarcharias.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.min.js" defer></script>
+  <style>
+    html{scroll-behavior:smooth}
+  </style>
+</head>
+<body class="bg-[#0d0d0d] text-white font-sans">
+  <!-- top bar -->
+  <div class="bg-gray-900 text-sm px-4 py-2 flex justify-between">
+    <div>
+      <span class="mr-4">☎ 06 00 00 00 00</span>
+      <span>✉ <a href="mailto:contact@carcharias-boxing.fr" class="text-blue-400 hover:underline">contact@carcharias-boxing.fr</a></span>
