@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique - Carcharias Boxing</title>
+  <link rel="icon" type="image/png" href="/images/logocarcharias.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.min.js" defer></script>
+</head>
+<body class="bg-[#0d0d0d] text-white font-sans" x-data="shop()">
+  <div class="bg-gray-900 text-sm px-4 py-2 flex justify-between">
+    <div>
+      <span class="mr-4">☎ 06 00 00 00 00</span>
+      <span>✉ <a href="mailto:contact@carcharias-boxing.fr" class="text-blue-400 hover:underline">contact@carcharias-boxing.fr</a></span>
+    </div>
+    <div class="space-x-3">
+      <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="hover:text-blue-400"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <header class="sticky top-0 z-40 bg-black shadow">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <div class="flex items-center space-x-3">
+        <img src="/images/logocarcharias.png" alt="Logo" class="w-8 h-8">
+        <span class="font-bold text-xl">Carcharias Boxing</span>
+      </div>
+      <nav class="hidden md:flex space-x-6 uppercase text-sm font-semibold">
+        <a href="index.html" class="hover:text-blue-400">Accueil</a>
+        <a href="le-club.html" class="hover:text-blue-400">Club</a>
+        <a href="planning.html" class="hover:text-blue-400">Planning</a>
+        <a href="actualites.html" class="hover:text-blue-400">Actus</a>
+        <a href="boutique.html" class="hover:text-blue-400 text-blue-400">Boutique</a>
+        <a href="inscription.html" class="hover:text-blue-400">Inscription</a>
+        <a href="contact.html" class="hover:text-blue-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="p-4" x-init="load()">
+    <h1 class="text-3xl font-bold text-blue-400 text-center mb-8">Boutique</h1>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <template x-for="item in products" :key="item.id">
+        <div class="bg-gray-800 p-4 rounded shadow flex flex-col">
+          <img :src="item.img" alt="product" class="mb-2 rounded">
+          <h2 class="font-semibold" x-text="item.name"></h2>
+          <p class="mb-2" x-text="item.price.toFixed(2)+' €'"></p>
+          <button @click="add(item)" class="mt-auto bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">Ajouter au panier</button>
+        </div>
+      </template>
+    </div>
+    <div class="max-w-6xl mx-auto mt-8 bg-gray-800 p-4 rounded">
+      <h2 class="text-xl font-semibold mb-2">Panier</h2>
+      <template x-if="cart.length === 0">
+        <p class="text-gray-400">Panier vide</p>
+      </template>
+      <div class="space-y-2" x-show="cart.length > 0">
+        <template x-for="(c,i) in cart" :key="i">
+          <div class="flex justify-between">
+            <span x-text="c.name"></span>
+            <span x-text="c.price.toFixed(2)+' €'"></span>
+          </div>
+        </template>
+        <div class="flex justify-between font-bold border-t border-gray-600 pt-2">
+          <span>Total</span>
+          <span x-text="total().toFixed(2)+' €'"></span>
+        </div>
+        <button class="mt-2 bg-green-600 px-4 py-1 rounded">Valider commande</button>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-gray-900 text-center py-4 text-gray-400 mt-8">
+    © 2025 Carcharias Boxing - <a href="mentions.html" class="hover:underline">Mentions légales</a>
+  </footer>
+  <script>
+    function shop(){
+      return {
+        products:[
+          {id:1,name:'Gants 10oz',price:45,img:'https://via.placeholder.com/200'},
+          {id:2,name:'T-shirt club',price:20,img:'https://via.placeholder.com/200'},
+          {id:3,name:'Short kickboxing',price:35,img:'https://via.placeholder.com/200'},
+          {id:4,name:'Casquette',price:15,img:'https://via.placeholder.com/200'},
+          {id:5,name:'Sac de sport',price:40,img:'https://via.placeholder.com/200'},
+          {id:6,name:'Protections tibias',price:30,img:'https://via.placeholder.com/200'},
+          {id:7,name:'Sweat à capuche',price:50,img:'https://via.placeholder.com/200'},
+          {id:8,name:'Serviette',price:12,img:'https://via.placeholder.com/200'}
+        ],
+        cart:[],
+        load(){
+          const saved = localStorage.getItem('cart');
+          this.cart = saved ? JSON.parse(saved) : [];
+        },
+        add(item){
+          this.cart.push(item);
+          localStorage.setItem('cart', JSON.stringify(this.cart));
+        },
+        total(){
+          return this.cart.reduce((s,i)=>s+i.price,0);
+        }
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
+</body>
+</html>
